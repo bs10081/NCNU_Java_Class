@@ -41,6 +41,6 @@ public class N3 {
         Scanner input = new Scanner(System.in);
         long start = input.nextLong(), end=input.nextLong();
         System.out.println(start+ " " + end + " " + maxN3(start, end));
-        input.close(); // God close the door, and put the dog.
+        input.close(); // God close the door, and put the dog🐕.
     }
 }
