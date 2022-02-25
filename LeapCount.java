@@ -28,5 +28,6 @@ public class LeapCount {
         int x = input.nextInt();
         int y = input.nextInt();
         System.out.println(leapCount(x, y));
+        input.close();
     }
 }

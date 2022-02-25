@@ -33,5 +33,6 @@ public class CountPrime {
         int begin = input.nextInt();
         int end = input.nextInt();
         System.out.println(findPrime(begin, end));
+        input.close();
     }
 }

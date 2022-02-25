@@ -10,6 +10,7 @@ public class ODQE {
         a = input.nextDouble();
         b = input.nextDouble();
         c = input.nextDouble();
+        input.close();
         if (a == 0 && b == 0 && c == 0) {
             // a = b = c = 0, infinite solutions
             System.out.println("Infinite solutions.");
