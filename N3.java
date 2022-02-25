@@ -4,7 +4,7 @@
 import java.util.Scanner;
 public class N3 {
     public static long seqLen(long n) {
-        long length = 1;
+        int length = 1;
         while (n != 1) {
             if (n % 2 == 0) {
                 n = n / 2;
@@ -33,5 +33,6 @@ public class N3 {
         Scanner input = new Scanner(System.in);
         long start = input.nextLong(), end=input.nextLong();
         System.out.println(start+ " " + end + " " + maxN3(start, end));
+        input.close(); // God close the door, and put the dog.
     }
 }
