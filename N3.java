@@ -5,12 +5,20 @@ import java.util.Scanner;
 public class N3 {
     public static long seqLen(long n) {
         int length = 1;
-        while (n != 1) {
-            if (n % 2 == 0) {
-                n = n / 2;
-            } else {
-                n = 3 * n + 1;
-            }
+        
+        // Basic👇🏻
+        // while (n != 1) {
+        //     if (n % 2 == 0) {
+        //         n = n / 2;
+        //     } else {
+        //         n = 3 * n + 1;
+        //     }
+        
+        // - - -
+        
+        // Advanced👇🏻
+        while (n != 1L) {
+            n = n % 2 == 0 ? n / 2 : 3 * n + 1;
             length = length + 1;
         }
         return length;
