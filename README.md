@@ -1,2 +1,4 @@
 # NCNU_Java_Class
-About Java
+About Java Class log.
+
+Do something great.
