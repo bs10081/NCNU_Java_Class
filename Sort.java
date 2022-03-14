@@ -68,7 +68,7 @@ public class Sort {
         int left = start+1;
         int right = end;
         while (true) {
-            while (left <= end && data[left] < v)
+            while (left <= end && data[left] <= v)
                 left++;
             while (data[right] > v)
                 right--;
