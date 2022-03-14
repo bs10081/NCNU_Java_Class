@@ -7,7 +7,7 @@ public class Lucky {
         // 初始化人數
         int result = 0;
         for (int i = 0; i < seat.length; i+=1) {
-            if (seat[i] < 3) {
+            if (seat[i] < bound) {
                 result++;
             }
         }
