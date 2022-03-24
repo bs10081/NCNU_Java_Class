@@ -1,5 +1,3 @@
-// 學號：110213027
-// 姓名：簡齊君
 // Power by Github Copilot
 import java.util.Scanner;
 public class FindMeal {
