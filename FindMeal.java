@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class FindMeal {
     // 選擇餐點
     public static String chooseR(Restaurant[] allR, int budget, int n) {
-        int caneat = 0, toolow = 0, toohigh = 0, who = 0; // 分別紀錄可以吃的餐廳、餐廳費用太低、餐廳費用太高、符合的餐廳
+        // 分別紀錄可以吃的餐廳、餐廳費用太低、餐廳費用太高、符合的餐廳
+        int caneat = 0, toolow = 0, toohigh = 0, who = 0; 
         for (int i = 0; i < n; i++) {
             if (allR[i].lp > budget) 
                 // 如果餐廳費用太低，就不算在可以吃的餐廳中
