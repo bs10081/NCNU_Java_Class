@@ -17,6 +17,7 @@ public class Perm {
         result[data.length] = v;
         return result;
     }
+    
     public static void perm(char[] avail, int n) {
         perm(avail, n, new char[0]);
     }
@@ -32,6 +33,20 @@ public class Perm {
         } // 核心程式
         for (int pos = 0; pos < avail.length; pos++) {
             perm(skip(avail, pos), n-1, append(result, avail[pos]));
+        }
+    }
+    public static void comb(char[] avail, int n) {
+        comb(avail, n, new char[0]);
+    }
+    public static void comb(char[] avail, int n, char[] result) {
+        if (n == 0) {
+            for (int i = 0; i < result.length; i++)
+                System.out.print(result[i]);
+            System.out.println();
+            return;
+        } // 核心程式
+        for (int pos = 0; pos < avail.length; pos++) {
+            comb(skip(avail, pos), n-1, append(result, avail[pos]));
         }
     }
     public static void main(String[] argv) {
