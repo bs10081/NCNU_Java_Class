@@ -130,6 +130,7 @@ public class Sampling {
             }
             System.out.println();
         }
-
+        // close scanner
+        input.close();
     }
 }
