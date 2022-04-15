@@ -2,6 +2,7 @@
 // 科赫曲線
 public class KochSnow extends Thread{
     public static Pen pen = new Pen();
+
     // 定義起點
     // 由起點(x, y)長度1,角度t
     private int x, y, length, t;
@@ -17,8 +18,11 @@ public class KochSnow extends Thread{
     //定義科赫曲線
     public static void koch(int x, int y, int length, int t) {
         if (length == 1) {
-            pen.flyTo(x, y);
-            pen.runTo(x, y);
+            synchronized(pen) { // 同步鎖, 防止畫點時, 其他程序也會畫
+                pen.flyTo(x, y);
+                pen.runTo(x, y);
+            }
+            
             try {
                 Thread.currentThread().sleep(1); //sleep 1ms
             } catch (Exception error) {
@@ -41,7 +45,9 @@ public class KochSnow extends Thread{
         KochSnow l1 = new KochSnow(100, 300, 81*3, 0); // up
         KochSnow l2 = new KochSnow(100+81*3, 300, 81*3, -120); // right
         KochSnow l3 = new KochSnow(100+81*3/2, (int)(300-81*3*Math.sin(3.14/180*-60)), 81*3, 120); // down
-        l1.start();
+        
+        // 啟動線程
+        l1.start(); 
         l2.start();
         l3.start();
     }
