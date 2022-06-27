@@ -1,28 +1,30 @@
 import java.util.Scanner;
+
 public class Square {
     public static int[][] findSol(int n) {
         int[][] result = new int[n][n];
-        int row = 0 ,col = n / 2;
+        int row = 0, col = n / 2;
         // 第一個數字填在第一列的中間
         result[row][col] = 1;
         // 依序填入 2 ~ n^2 個數字
-        for (int i = 2; i < n*n+1; i++) {
+        for (int i = 2; i < n * n + 1; i++) {
             // 計算右上方的座標
-            int nextrow = (row-1+n)%n, nextcol = (col+1)%n;
+            int nextrow = (row - 1 + n) % n, nextcol = (col + 1) % n;
             // 下一個數字先填在右上，
             if (result[nextrow][nextcol] != 0) {
                 // 已填寫則填在右上方的正下方
-                nextrow = (row+1)%n; nextcol = col;
+                nextrow = (row + 1) % n;
+                nextcol = col;
             }
-            System.out.println(result[nextrow][nextcol]);
+            // System.out.println(result[nextrow][nextcol]);
             result[nextrow][nextcol] = i;
-            row = nextrow; 
-            col = nextcol; 
+            row = nextrow;
+            col = nextcol;
             // 如果出界，則移動到另外一邊
         }
-        return result; 
+        return result;
     }
-    
+
     public static void main(String[] argv) {
         Scanner input = new Scanner(System.in);
         // 輸入 n ，限制為1-10之內的奇數
